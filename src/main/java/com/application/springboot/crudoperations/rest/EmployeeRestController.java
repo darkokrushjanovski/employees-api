@@ -19,39 +19,39 @@ public class EmployeeRestController {
     }
 
 
-    @GetMapping("/employees")
-    public List<Employee> findAllEmployees() {
-        return employeeService.findAll();
-    }
-
-    @GetMapping("/employees/{id}")
-    public Employee getById(@PathVariable("id") int id) {
-        Employee employee = employeeService.getById(id);
-
-        if (employee == null) {
-            throw new RuntimeException("Employee not found");
-        }
-        return employee;
-    }
-
-    @PostMapping("/employees")
-    public Employee addEmployee(@RequestBody Employee employee){
-        employee.setId(0);
-        Employee dbEmployee = employeeService.save(employee);
-
-        return dbEmployee;
-    }
-
-    @PutMapping("/employees")
-    public Employee updateEmployee(@RequestBody Employee employee){
-        Employee dbEmployee = employeeService.save(employee);
-        return dbEmployee;
-    }
-
-    @DeleteMapping("/employees/{id}")
-    public Employee deleteEmployee(@PathVariable int id){
-        Employee employee = employeeService.getById(id);
-        employeeService.deleteById(employee.getId());
-        return employee;
-    }
+//    @GetMapping("/employees")
+//    public List<Employee> findAllEmployees() {
+//        return employeeService.findAll();
+//    }
+//
+//    @GetMapping("/employees/{id}")
+//    public Employee getById(@PathVariable("id") int id) {
+//        Employee employee = employeeService.getById(id);
+//
+//        if (employee == null) {
+//            throw new RuntimeException("Employee not found");
+//        }
+//        return employee;
+//    }
+//
+//    @PostMapping("/employees")
+//    public Employee addEmployee(@RequestBody Employee employee){
+//        employee.setId(0);
+//        Employee dbEmployee = employeeService.save(employee);
+//
+//        return dbEmployee;
+//    }
+//
+//    @PutMapping("/employees")
+//    public Employee updateEmployee(@RequestBody Employee employee){
+//        Employee dbEmployee = employeeService.save(employee);
+//        return dbEmployee;
+//    }
+//
+//    @DeleteMapping("/employees/{id}")
+//    public Employee deleteEmployee(@PathVariable int id){
+//        Employee employee = employeeService.getById(id);
+//        employeeService.deleteById(employee.getId());
+//        return employee;
+//    }
 }

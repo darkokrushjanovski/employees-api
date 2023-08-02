@@ -31,9 +31,9 @@ public class EmployeeServiceImpl implements EmployeeService {
         Employee employee = null;
         if(dbEmployee.isPresent()){
             return dbEmployee.get();
+        }else{
+            throw new RuntimeException("Employee not found");
         }
-
-        return employee;
     }
 
     @Override
